@@ -8,7 +8,7 @@ times = 5
 # Esto toma la fecha y hora actual.
 init_time = datetime.now()
 print(f"¡Veremos cuanto tardas en responder estas {times} operaciones!")
-#inicializo las variables para contar los aciertos y fallos en los resultados.
+#variables utilizadas para contar los aciertos y fallos en los resultados
 acierto = 0
 no_acierto = 0 
 for i in range(0, times):
@@ -24,14 +24,11 @@ for i in range(0, times):
   # Le pedimos al usuario el resultado
   result = int(input("resultado: "))
   #ANALIZO, TENIENDO EN CUENTA EL OPERADOR, EL RESULTADO CORRECTO.
-  if (operator == "+"): 
-    result_correcto= number_1 + number_2
-  elif (operator == "-"):
-    result_correcto= number_1 - number_2
-  elif (operator == "/"):
-    result_correcto= number_1 / number_2
-  else:
-    result_correcto= number_1 * number_2
+  match operator:
+    case '+':result_correcto= number_1 + number_2
+    case '-':result_correcto= number_1 - number_2
+    case '*':result_correcto= number_1 * number_2
+    case '/':result_correcto= number_1 / number_2
   #compruebo si el resultado fue correcto.
   if (result == result_correcto): 
     print('EL RESULTADO ES CORRECTO')
@@ -47,5 +44,5 @@ total_time = end_time - init_time
 # Mostramos ese tiempo en segundos.
 print(f"\n Tardaste {total_time.seconds} segundos.")
 #imprimo la cantidad de aciertos y fallos.
-print("La cantidad de aciertos es:",acierto)
-print("La cantidad de fallos es:",no_acierto)
+print(f"La cantidad de aciertos es:",{acierto})
+print(f"La cantidad de fallos es:",{no_acierto})
