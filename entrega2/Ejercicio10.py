@@ -1,4 +1,3 @@
-from functools import reduce
 nombres = ''' 'Agustin', 'Alan', 'Andrés', 'Ariadna', 'Bautista', 'CAROLINA', 'CESAR','David','Diego', 'Dolores', 'DYLAN', 'ELIANA', 'Emanuel', 'Fabián', 'Facundo','Francsica', 'FEDERICO', 'Fernanda', 'GONZALO', 'Gregorio', 
 'Ignacio', 'Jonathan','Joaquina', 'Jorge','JOSE', 'Javier', 'Joaquín' , 'Julian', 'Julieta', 'Luciana','LAUTARO', 'Leonel', 'Luisa', 'Luis', 'Marcos', 'María', 'MATEO', 'Matias',
 'Nicolás', 'Nancy', 'Noelia', 'Pablo', 'Priscila', 'Sabrina', 'Tomás', 'Ulises','Yanina' '''
@@ -11,7 +10,7 @@ def recopilar_info ():
     return list(zip(lista_nombres,notas_1,notas_2))
 
 def promedio_notas (t):
-    promedio=sum(t[1:]) / 2 #hay q generalizarlo el dividido 2 o esta bien ponerlo de una?
+    promedio=sum(t[1:]) / 2 
     return (t[0],promedio)
 
 def promedio_curso (l):
@@ -31,12 +30,14 @@ lista_tupla= recopilar_info()
 print(lista_tupla)
 #inciso B
 lista_promedio_estudiantes=list(map(promedio_notas,lista_tupla))
-print('promedio de los estudiantes:')
+print('Promedio de los estudiantes:')
 print(lista_promedio_estudiantes)
 #inciso C 
-print("el promedio general del curso es:", promedio_curso(lista_tupla))
+print("El promedio general del curso es:", promedio_curso(lista_tupla))
 #inciso D
-print("el estudiante con mayor promedio es:",maximo_promedio(lista_promedio_estudiantes)) 
+estudiante_max_promedio,promedio_max= maximo_promedio(lista_promedio_estudiantes)
+print(f"El estudiante{estudiante_max_promedio} tiene la nota promedio mas alta: {promedio_max}") 
 #inciso E
-print("el estudiante con la nota mas baja es:",minimo_nota(lista_tupla)) 
+estudiante_min,nota_min1,nota_min2=minimo_nota(lista_tupla)
+print(f"El estudiante{estudiante_min} posee la nota mas baja: {nota_min1 + nota_min2}") 
 
