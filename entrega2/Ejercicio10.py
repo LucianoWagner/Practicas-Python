@@ -26,12 +26,15 @@ def minimo_nota(lt):
 
 #inciso A
 lista_tupla= recopilar_info()
+print('contenido de la lista de tuplas:')
 print(lista_tupla)
 #inciso B
+print('-' * 50)
 lista_promedio_estudiantes=list(map(promedio_notas,lista_tupla))
 print('Promedio de los estudiantes:')
 print(lista_promedio_estudiantes)
 #inciso C 
+print('-' * 50)
 print("El promedio general del curso es:", promedio_curso(lista_tupla))
 #inciso D
 estudiante_max_promedio,promedio_max= maximo_promedio(lista_promedio_estudiantes)
