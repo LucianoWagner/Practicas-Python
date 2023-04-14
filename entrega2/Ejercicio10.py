@@ -5,8 +5,7 @@ notas_1 = [81, 60, 72, 24, 15, 91, 12, 70, 29, 42, 16, 3, 35, 67, 10, 57, 11, 69
 notas_2 = [30, 95, 28, 84, 84, 43, 66, 51, 4, 11, 58, 10, 13, 34, 96, 71, 86, 37,64, 13, 8, 87, 14, 14, 49, 27, 55, 69, 77, 59, 57, 40, 96, 24, 30, 73,95, 19, 47, 15, 31, 39, 15, 74, 33, 57, 10]
 
 def recopilar_info ():
-    nom=nombres.replace('\'','').replace('\n','')
-    lista_nombres= nom.split(",")
+    lista_nombres=nombres.replace('\'','').replace('\n','').replace(' ','').split(',')
     return list(zip(lista_nombres,notas_1,notas_2))
 
 def promedio_notas (t):
@@ -19,11 +18,11 @@ def promedio_curso (l):
         notas_totales+= sum(elem[1:])
     return notas_totales / (len(l) * 2)
 
-def maximo_promedio(l):
-    return max(l,key=lambda x: x[1])
+def maximo_promedio(lt):
+    return max(lt,key=lambda x: x[1])
 
-def minimo_nota(l):
-    return min(l,key=lambda x:(x[1]+x[2]))
+def minimo_nota(lt):
+    return min(lt,key=lambda x:(x[1]+x[2]))
 
 #inciso A
 lista_tupla= recopilar_info()
@@ -36,8 +35,7 @@ print(lista_promedio_estudiantes)
 print("El promedio general del curso es:", promedio_curso(lista_tupla))
 #inciso D
 estudiante_max_promedio,promedio_max= maximo_promedio(lista_promedio_estudiantes)
-print(f"El estudiante{estudiante_max_promedio} tiene la nota promedio mas alta: {promedio_max}") 
+print(f"El estudiante {estudiante_max_promedio} tiene la nota promedio mas alta: {promedio_max}") 
 #inciso E
 estudiante_min,nota_min1,nota_min2=minimo_nota(lista_tupla)
-print(f"El estudiante{estudiante_min} posee la nota mas baja: {nota_min1 + nota_min2}") 
-
+print(f"El estudiante {estudiante_min} posee la nota mas baja, nota total: {nota_min1 + nota_min2}")
