@@ -37,5 +37,5 @@ print("El promedio general del curso es:", promedio_curso(lista_tupla))
 estudiante_max_promedio,promedio_max= maximo_promedio(lista_promedio_estudiantes)
 print(f"El estudiante {estudiante_max_promedio} tiene la nota promedio mas alta: {promedio_max}") 
 #inciso E
-estudiante_min,nota_min1,nota_min2=minimo_nota(lista_tupla)
-print(f"El estudiante {estudiante_min} posee la nota mas baja, nota total: {nota_min1 + nota_min2}")
+tupla_min=minimo_nota(lista_tupla)
+print(f"El estudiante {tupla_min[0]} posee la nota mas baja")
