@@ -22,7 +22,7 @@ def maximo_promedio(lt):
     return max(lt,key=lambda x: x[1])
 
 def minimo_nota(lt):
-    return min(lt,key=lambda x:(x[1]+x[2]))
+    return min(lt,key=lambda x:(x[1],x[2]))
 
 #inciso A
 lista_tupla= recopilar_info()
