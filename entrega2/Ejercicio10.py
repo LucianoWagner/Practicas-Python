@@ -22,7 +22,7 @@ def maximo_promedio(lt):
     return max(lt,key=lambda x: x[1])
 
 def minimo_nota(lt):
-    return min(lt,key=lambda x:(x[1],x[2]))
+    return min(lt, key=lambda x: min(x[1],x[2]))[0]
 
 #inciso A
 lista_tupla= recopilar_info()
@@ -40,5 +40,5 @@ print("El promedio general del curso es:", promedio_curso(lista_tupla))
 estudiante_max_promedio,promedio_max= maximo_promedio(lista_promedio_estudiantes)
 print(f"El estudiante {estudiante_max_promedio} tiene la nota promedio mas alta: {promedio_max}") 
 #inciso E
-tupla_min=minimo_nota(lista_tupla)
-print(f"El estudiante {tupla_min[0]} posee la nota mas baja")
+estudiante_min=minimo_nota(lista_tupla)
+print(f"El estudiante {estudiante_min} posee la nota mas baja")
